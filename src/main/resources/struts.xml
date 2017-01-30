@@ -22,22 +22,26 @@
 <struts>
   <constant name="struts.devMode" value="true"></constant>
   <package name="default" namespace="/" extends="struts-default">
-    <action name="addUserForm" class="org.superbiz.struts.AddUserForm">
+    <action name="" class="org.superbiz.struts.IndexPage" method="execute">
+      <result>/index.jsp</result>
+    </action>
+    <action name="addUserForm" class="org.superbiz.struts.AddUserForm" method="execute">
       <result>/addUserForm.jsp</result>
     </action>
-    <action name="addUser" class="org.superbiz.struts.AddUser">
+    <action name="addUser" class="org.superbiz.struts.AddUser" method="execute">
       <result name="success">/addedUser.jsp</result>
       <result name='failure'>/addUserForm.jsp</result>
     </action>
-    <action name="findUserForm" class="org.superbiz.struts.FindUserForm">
+    <action name="findUserForm" class="org.superbiz.struts.FindUserForm" method="execute">
       <result>/findUserForm.jsp</result>
     </action>
-    <action name="findUser" class="org.superbiz.struts.FindUser">
+    <action name="findUser" class="org.superbiz.struts.FindUser" method="execute">
       <result name='success'>/displayUser.jsp</result>
       <result name='failure'>/findUserForm.jsp</result>
     </action>
     <action name="listAllUsers" class="org.superbiz.struts.ListAllUsers">
-      <result>/displayUsers.jsp</result>
+      <result name="success">/displayUsers.jsp</result>
+      <result name="failure">/displayUsers.jsp</result>
     </action>
 
   </package>
